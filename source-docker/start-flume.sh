@@ -1,6 +1,13 @@
 #!/bin/bash
 ip=$1
+if [ -z "$1" ]
+  then
+    echo "No Server IP supplied"
+    exit 1;
+fi
+
 echo $ip
+
 
 echo "step 1) copying ip at flume_send.conf"
 
