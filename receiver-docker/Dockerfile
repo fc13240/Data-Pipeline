@@ -93,9 +93,6 @@ RUN chown pipeline-admin:pipeline-admin recieve_data.py
 ADD flume_receive.conf /home/pipeline-admin/flume_receive.conf
 RUN chown pipeline-admin:pipeline-admin flume_receive.conf
 
-ADD check-data.py /home/pipeline-admin/check-data.py
-RUN chown pipeline-admin:pipeline-admin check-data.py
-
 #Add notebooks
 ADD notebooks /home/pipeline-admin/notebooks
 RUN chown -R pipeline-admin:pipeline-admin notebooks
