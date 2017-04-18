@@ -1,6 +1,14 @@
 # flume->kafka->spark->cassandra: data-pipeline
 This project creates data pipeline which gets data from flume sender on different host and processes using Kafka-> spark and stores in cassandra.
 
+
+![My Image](https://github.com/rashmishrm/data-pipeline/blob/master/step-images/data_pipeline.png)
+
+
+
+
+
+
 **Assumptions:**
 ```
 Requires Docker
