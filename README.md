@@ -14,6 +14,8 @@ Steps:
 
 >  docker build  -t stream-pipeline .
 
+![My Image](https://github.com/rashmishrm/data-pipeline/step-images/blob/master/build-reciever.png)
+
 3. Run docker receiver
 
 > docker run -p 4040:4040 -p 8888:8888 -p 23:22 -ti --privileged stream-pipeline
