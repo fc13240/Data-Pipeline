@@ -1,3 +1,7 @@
+#!/bin/bash
+ip=$1
+echo $ip
+sed -i 's/<Reciever-IP>/'$ip'/g' /home/pipeline-admin/flume_send.conf
 
 echo starting flume agent
 cd $HOME/flume/bin

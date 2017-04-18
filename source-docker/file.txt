@@ -1,0 +1,7 @@
+sample data to be sent
+it might be logs or something else
+sample
+sample
+flume
+kafka
+spark

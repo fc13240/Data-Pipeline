@@ -44,6 +44,9 @@ RUN echo . ./setenv.sh >> .bashrc
 ADD start-flume.sh /usr/bin/start-flume.sh
 RUN chmod +x /usr/bin/start-flume.sh
 
+ADD file.txt /home/pipeline-admin/flume/bin/file.txt
+RUN chmod +x /home/pipeline-admin/flume/bin/file.txt
+
 
 ADD flume_send.conf /home/pipeline-admin/flume_send.conf
 RUN chown pipeline-admin:pipeline-admin flume_send.conf
