@@ -1,28 +1,56 @@
-# data-pipeline
+# flume->kafka->spark->cassandra: data-pipeline
 
 Steps:
 
-1. Download data-pipeline repository.
-2. Build Docker image.
-	
+ Download data-pipeline repository.
 
-> docker build  -t stream-pipeline .
+**Starting Receiver:**
 
-3. Run docker. 
+1. Go to receiver directory
 
->   docker run -p 4040:4040 -p 8888:8888 -p 23:22 -p 56565:56565 -ti --privileged my-pipeline
+>  cd reciever-docker
 
-4.  Start kafka,flume with below script.
+ 2. Build Docker image. This might take 15 minutes as it downloads all required packages.
+
+>  docker build  -t stream-pipeline .
+
+3. Run docker receiver
+
+> docker run -p 4040:4040 -p 8888:8888 -p 23:22 -ti --privileged stream-pipeline
+
+4. Above step drops you in container shell. start all services
 
 > 	sh startup_script.sh
+5. check ip of this receiver machine.
+>    ifconfig
 
-5. Run Telnet to send messages to flume source
+6.  open Jupyter notebook for receiver program and run step by step. 
+    IMP: Do not stop spark streaming. 
+ 
 
-> 	curl telnet://localhost:56565
+>  http://localhost:8888/notebooks/notebooks/Spark-stream-and-save.ipynb
 
-5.  open Jupyter notebook for receiver program and run step by step.
-  
+**Starting Sender Flume Agent:**
 
-> http://localhost:8888/notebooks/notebooks/Spark-stream-and-save.ipynb
+> cd source-docker
+
+1. build docker image
+
+> docker build -t sender .
+
+2. Run docker image
+
+> docker run -p 4545:4545 -ti --privileged sender
+
+3. start flume agent.
+
+> sh start-flume.sh <ip of reciever>
+
+
+
+**Check Logs on Jupiter Notebook**
+
+>  http://localhost:8888/notebooks/notebooks/Spark-stream-and-save.ipynb
+
 
 
