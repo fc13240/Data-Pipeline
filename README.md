@@ -1,6 +1,8 @@
 # flume->kafka->spark->cassandra: data-pipeline
+This project creates data pipeline which gets data from flume sender on different host and processes using Kafka-> spark and stores in cassandra.
 
-Steps:
+
+**Steps:
 
  Download data-pipeline repository.
 
@@ -8,10 +10,10 @@ Steps:
 
 1. Go to receiver directory
 ```
-cd reciever-docker
+cd receiver-docker
 ```
 
- 2. Build Docker image. This might take 15 minutes as it downloads all required packages.
+ 2. Build Docker image. This might take some time (~approx 15-20 minutes) as it downloads all required packages.
 ```
  docker build  -t stream-pipeline .
 ```
