@@ -15,4 +15,4 @@ nohup jupyter notebook --ip='*' &
 
 echo starting flume agent
 cd $HOME/flume/bin
-nohup ./flume-ng agent --conf /home/pipeline-admin/flume/conf --conf-file /home/pipeline-admin/flume.conf --name NetcatAgent -Df.root.logger=INFO,console &
+nohup ./flume-ng agent --conf /home/pipeline-admin/flume/conf --conf-file /home/pipeline-admin/flume_receive.conf --name receiveAgent -Df.root.logger=INFO,console &
