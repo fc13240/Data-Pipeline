@@ -41,7 +41,7 @@ sh startup_script.sh
 
 5. check ip of this receiver machine.
 ```
-ifconfig
+ifconfig or ipconfig
 ```
 
 6.  open Jupyter notebook for receiver program and run step by step. 
